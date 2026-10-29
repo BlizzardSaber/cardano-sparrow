@@ -1,0 +1,40 @@
+{
+  "name": "cardano-sparrow",
+  "version": "0.3.26",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "desktop/main.mjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4173 --strictPort",
+    "build": "tsc && vite build",
+    "start": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "sign:test": "node scripts/sign-test.mjs",
+    "test": "vitest run && node scripts/test-origin.mjs && node scripts/test-koios-retry.mjs && node scripts/test-blockfrost-proxy.mjs && node scripts/test-release-signing.mjs",
+    "security:fuzz": "vitest run src/security.fuzz.test.ts",
+    "repro:check": "node scripts/check-reproducible.mjs",
+    "desktop:build": "npm run build && node scripts/build-desktop.mjs",
+    "release:verify": "node scripts/verify-release.mjs",
+    "release:sign": "node scripts/sign-release.mjs"
+  },
+  "dependencies": {
+    "@cardano-foundation/ledgerjs-hw-app-cardano": "8.1.0",
+    "@emurgo/cardano-serialization-lib-browser": "17.0.0",
+    "@ledgerhq/hw-transport-webhid": "6.36.0",
+    "@scure/bip39": "2.4.0",
+    "bech32": "2.0.0",
+    "buffer": "6.0.3",
+    "jsqr": "1.4.0",
+    "qrcode": "1.5.4"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "@emurgo/cardano-serialization-lib-nodejs": "17.0.0",
+    "@types/qrcode": "1.5.6",
+    "electron": "44.9.3",
+    "fast-check": "4.10.2",
+    "typescript": "5.9.3",
+    "vite": "8.3.4",
+    "vitest": "5.0.5"
+  }
+}
