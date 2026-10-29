@@ -16,9 +16,10 @@ Cardano-Sparrow-0.3.26-arm64.dmg SHA-256
 3cf395c5535b67c032efbb8d0d7c31f69b254e59a6eef8870934daa3ac927cc1
 ```
 
-Download the DMG together with `MANIFEST-0.3.26.sha256`, `MANIFEST-0.3.26.sig`,
-`RELEASE-PUBLIC-KEY.pem` and the verifier from the GitHub release. Prefer the
-Ed25519 signature check over comparing only the SHA-256 text shown on this page:
+When verifying a locally distributed DMG, keep it together with
+`MANIFEST-0.3.26.sha256`, `MANIFEST-0.3.26.sig`, `RELEASE-PUBLIC-KEY.pem` and
+the verifier published in the GitHub release. Prefer the Ed25519 signature
+check over comparing only the SHA-256 text shown on this page:
 an attacker who can replace both a download and this page can also replace a
 plain hash. Record the publisher fingerprint independently before relying on it.
 Full offline verification instructions are in
