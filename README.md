@@ -4,6 +4,26 @@
 
 > **Security notice:** This is self-custody software, not an independently audited financial product. Review the source, verify release signatures, test on Preprod and with small amounts, and confirm every output and fee on the hardware-wallet screen before using Mainnet.
 
+## Release verification
+
+Do not rely on the filename alone. The current macOS `0.3.26` release has:
+
+```text
+Publisher Ed25519 public-key fingerprint
+7579b1ba72cb31cd893040deba3301e03de7c7e27bf2df763ab75c8bfece7ea7
+
+Cardano-Sparrow-0.3.26-arm64.dmg SHA-256
+3cf395c5535b67c032efbb8d0d7c31f69b254e59a6eef8870934daa3ac927cc1
+```
+
+Download the DMG together with `MANIFEST-0.3.26.sha256`, `MANIFEST-0.3.26.sig`,
+`RELEASE-PUBLIC-KEY.pem` and the verifier from the GitHub release. Prefer the
+Ed25519 signature check over comparing only the SHA-256 text shown on this page:
+an attacker who can replace both a download and this page can also replace a
+plain hash. Record the publisher fingerprint independently before relying on it.
+Full offline verification instructions are in
+[`OFFLINE_RELEASE_SIGNING.md`](./OFFLINE_RELEASE_SIGNING.md).
+
 极简、本地优先的 Cardano CIP-1854 M-of-N HD 多签原型。支持 **Mainnet / Preprod、watch-only、ADA 与原生资产余额显示/转账、M-of-N 质押委托**，新钱包默认 Mainnet。
 
 ## 已实现
